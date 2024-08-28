@@ -29,21 +29,18 @@ public:
         this->day=d.day;
         this->month=m.month;
         this->year=y.year;
-
     }
     int getDay(){
         return day;
     }
     int getMonth(){
         return month;
-
     }
     long getYear(){
         return year;
     }
     void setDay(int d){
         this->day=d;
-
     }
     void setMonth(int m){
         this->month=m;
@@ -85,7 +82,6 @@ public:
 
 //train structure
 struct train{
-
     int Train_No;
     string Train_Name;
     string Boarding_point;
@@ -163,7 +159,6 @@ public:
             current->age=age;
             count++;
             len++;
-
             last->next=current;
             last=current;
         }
@@ -252,7 +247,6 @@ public:
             cust *p=first;
             cust *temp=first;
             while (p->id!=ID && p->next!=NULL){
-
                 temp=p;
                 p=p->next;
             }
@@ -305,7 +299,6 @@ public:
             } else {
                 cout << "Password not matched" << endl;
             }
-
         } else {
             cout << "No such customer found" << endl;
         }
@@ -318,7 +311,6 @@ private:
     int length;
     train *first = NULL;
     train *last = NULL;
-
     long Train_No;
     string Train_Name;
     string Boarding_point;
@@ -354,8 +346,7 @@ public:
     int getSeats() {
         return getSeats();
     }
-    string findd(int t)
-    {
+    string findd(int t){
         train *p=first;
         bool search=false;
         string dest;
@@ -375,9 +366,7 @@ public:
         }
         return dest;
     }
-    string findb(int t)
-    {
-
+    string findb(int t){
         train *p=first;
         bool search=false;
         string board;
@@ -413,7 +402,6 @@ public:
             current->date.setYear(date1.getYear());
             current->time.setHour(t1.getHour());
             current->time.setMinutes(t1.getMinutes());
-
             length++;
             first = current;
             last = current;
@@ -430,7 +418,6 @@ public:
             current->date.setYear(date1.getYear());
             current->time.setHour(t1.getHour());
             current->time.setMinutes(t1.getMinutes());
-
             length++;
             last->next = current;
             last = current;
@@ -486,7 +473,6 @@ public:
                     p->Boarding_point = p->next->Boarding_point;
                     p->date = p->next->date;
                     p->time=p->next->time;
-
                     p->next->Train_No = t_no;
                     p->next->Train_Name = name;
                     p->next->Boarding_point = boarding;
@@ -516,8 +502,7 @@ struct tickets{
 };
 
 //TicketReservation
-class TicketReservation
-{
+class TicketReservation{
 private:
     int seats;
     int identity;
@@ -527,6 +512,7 @@ private:
     cust * cust1;
     string b,d;
     int distanceshot;
+
 public:
     //constructor
     TicketReservation() {
@@ -566,7 +552,6 @@ public:
         {
             if(i==dest)
             {
-
                 if(pick==0 && dest==0)
                 {
                     short1=distance[i];
@@ -654,7 +639,6 @@ public:
     }
     void seat_Reservation(TrainRecord train,Customer cust) {
         tickets *current = new tickets;
-
         bool boolean;
         do{
             cout << "enter your ID" << endl;
@@ -679,9 +663,7 @@ public:
                 cin.ignore(256, '\n');
             }
             while (b==true);
-
             train1=train.linear_searching(t_Number);
-
 
             if(train1!=NULL)
             {
@@ -726,7 +708,6 @@ public:
                     cin.ignore(256, '\n');
                 }
                 while (bo==true);
-
                 if(train1->No_of_seats>=seats){
                     train1->No_of_seats=train1->No_of_seats-seats;
                     cout<<"Seats Reserved Successfully"<<endl;
@@ -741,12 +722,10 @@ public:
                             current->date=train1->date;
                             current->time=train1->time;
                             current->fare=train1->Fare_per_ticket*seats;
-
                             first=current;
                             last=current;
                         }
-                        else
-                        {
+                        else{
                             current->NAME=cust1->name;
                             current->NoSeats=seats;
                             current->id=cust1->id;
@@ -756,7 +735,6 @@ public:
                             current->date=train1->date;
                             current->time=train1->time;
                             current->fare=train1->Fare_per_ticket*seats;
-
                             last->next=current;
                             last=current;
                         }
@@ -828,7 +806,6 @@ public:
         return NULL;
     }
     void delete_ticket(int ID){
-
         if(first==NULL){
             cout<<"No user to delete"<<endl;
         }
@@ -836,7 +813,6 @@ public:
             tickets *p=first;
             tickets *temp=first;
             while (p->id!=ID && p->next!=NULL){
-
                 temp=p;
                 p=p->next;
             }
@@ -910,7 +886,6 @@ public:
             cout<<"No Such Passenger found"<<endl;
         }
     }
-
 };
 class Admin {
 private:
@@ -949,7 +924,6 @@ public:
         } while (boolean == true);
         cout << "Enter Your password :" << endl;
         cin >> pass;
-
         count++;
     }
 
